@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Path to Success: Becoming a Lecturer</title>
+    <style>
+        /* CSS Styling */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+        
+        header {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+        }
+        
+        .nav-link {
+            margin: 0 20px;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 0;
+            gap: 40px;
+        }
+        
+        .hero-content {
+            flex: 1;
+        }
+        
+        .hero h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .hero h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: #34495e;
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 5px solid white;
+        }
+        
+        .highlight {
+            background-color: var(--light);
+            padding: 60px 0;
+            margin: 40px 0;
+        }
+        
+        .cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex: 1;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .why-section {
+            padding: 60px 0;
+        }
+        
+        .why-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .why-text {
+            flex: 1;
+        }
+        
+        .why-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .why-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .why-text h2 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-size: 2rem;
+        }
+        
+        .why-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+        
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        @media (max-width: 900px) {
+            .hero, .why-content, .cards {
+                flex-direction: column;
+            }
+            
+            .hero-image, .why-image {
+                order: -1;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>The Path to Success: Achieving Your Career Dreams</h1>
+            <p class="subtitle">Becoming a Lecturer - Inspiring Minds and Shaping Futures</p>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="file:///C:/Users/HP/OneDrive/Documents/webdesign/HOME.html" class="nav-link">Home</a>
+            <a href="file:///C:/Users/HP/OneDrive/Documents/webdesign/INSPIRATION.html" class="nav-link">Step by Step Guide</a>
+            <a href="file:///C:/Users/HP/OneDrive/Documents/webdesign/STEPBYSTEP.html" class="nav-link">Inspiration & Resources</a>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="container hero">
+        <div class="hero-content">
+            <h2>Becoming a Lecturer: A Journey of Knowledge and Impact</h2>
+            <p>My name is NUR AIN SYAZANA BINTI RAMLI , I'm 22 years old and i want to be lecturer. Lecturers play a pivotal role in shaping the minds of future generations. They are not just educators but mentors, researchers, and lifelong learners who inspire students to reach their full potential. A career in academia offers the unique opportunity to contribute to knowledge creation while nurturing intellectual growth.</p>
+            <p>As a lecturer, you'll have the privilege of working in a dynamic environment where you can specialize in your field of expertise, conduct meaningful research, and make a lasting impact on students' lives. The journey requires dedication, advanced education, and a passion for teaching, but the rewards of seeing students succeed are immeasurable.</p>
+            <a href="steps.html" class="btn">Explore the Journey</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Lecturer teaching in a classroom">
+        </div>
+    </section>
+    
+    <!-- Highlight Section -->
+    <section class="highlight">
+        <div class="container">
+            <h2 style="text-align: center; color: var(--primary); margin-bottom: 40px;">Why Choose Academia?</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">💡</div>
+                    <h3>Intellectual Stimulation</h3>
+                    <p>Engage with cutting-edge research, explore new ideas, and contribute to the advancement of knowledge in your field. Academia provides an environment that fosters continuous learning and intellectual growth.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">👨‍🏫</div>
+                    <h3>Mentorship Opportunities</h3>
+                    <p>Guide and inspire the next generation of professionals. As a lecturer, you'll have the privilege of mentoring students, helping them navigate their academic and career paths.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🌍</div>
+                    <h3>Global Impact</h3>
+                    <p>Through research, publications, and teaching, lecturers influence thinking and practices worldwide. Your work can contribute to solving global challenges and advancing human understanding.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Become a Lecturer -->
+    <section class="why-section container">
+        <div class="why-content">
+            <div class="why-image">
+                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Lecturer engaging with students">
+            </div>
+            <div class="why-text">
+                <h2>The Rewards of Teaching</h2>
+                <p>Choosing a career as a lecturer offers unique rewards that extend beyond the classroom. You'll enjoy academic freedom to explore your research interests, flexible schedules that allow for deep work, and the satisfaction of seeing your students succeed.</p>
+                <p>Lecturers often describe their career as a calling rather than just a job. The opportunity to ignite curiosity, challenge assumptions, and foster critical thinking in students creates a meaningful professional life.</p>
+                <p>Moreover, academia offers diverse career paths - from teaching-focused roles to research-intensive positions, with opportunities for leadership, consultancy, and international collaboration.</p>
+                <a href="resources.html" class="btn">Find Inspiration</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>SMM30503 – Web Design & Development | Individual Assignment 1</p>
+            <p>Learn more about academic careers at <a href="https://www.timeshighereducation.com/career" style="color: #3498db; text-decoration: none;" target="_blank">Times Higher Education</a></p>
+        </div>
+    </footer>
+</body>
+</html>

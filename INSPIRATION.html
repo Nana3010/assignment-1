@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspiration & Resources for Aspiring Lecturers</title>
+    <style>
+        /* Consistent styling with previous pages */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+            --warning: #f39c12;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+        
+        header {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+        }
+        
+        .nav-link {
+            margin: 0 20px;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        /* Page specific styling */
+        .page-title {
+            text-align: center;
+            margin: 50px 0 30px;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .page-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .intro-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            font-size: 1.1rem;
+            color: #34495e;
+        }
+        
+        .table-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            margin-bottom: 60px;
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+        
+        th {
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            color: white;
+            text-align: left;
+            padding: 15px;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            color: #34495e;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        tr:hover {
+            background-color: #f0f8ff;
+        }
+        
+        .figure-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--light);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .resource-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            display: inline-block;
+            margin: 5px 0;
+        }
+        
+        .resource-link:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+        
+        .resource-link::after {
+            content: "→";
+            margin-left: 5px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        
+        .resource-link:hover::after {
+            opacity: 1;
+        }
+        
+        .quote {
+            font-style: italic;
+            color: #7f8c8d;
+            border-left: 3px solid var(--accent);
+            padding-left: 15px;
+            margin: 10px 0;
+        }
+        
+        .resources-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .resource-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--secondary);
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .resource-card h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .resource-card h3 i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .resource-card ul {
+            padding-left: 20px;
+        }
+        
+        .resource-card li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .resource-card li::before {
+            content: "•";
+            color: var(--secondary);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+        
+        .book-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 60px 0;
+            margin-top: 40px;
+        }
+        
+        .books-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .book-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .book-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .book-info {
+            padding: 20px;
+        }
+        
+        .book-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        
+        .book-author {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+        
+        .center {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            th, td {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+            
+            .figure-image {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>The Path to Success: Achieving Your Career Dreams</h1>
+            <p class="subtitle">Inspiration & Resources for Aspiring Lecturers</p>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="file:///C:/Users/HP/OneDrive/Documents/webdesign/HOME.html" class="nav-link">Home</a>
+            <a href="file:///C:/Users/HP/OneDrive/Documents/webdesign/INSPIRATION.html" class="nav-link">Step by Step Guide</a>
+            <a href="file:///C:/Users/HP/OneDrive/Documents/webdesign/STEPBYSTEP.html" class="nav-link active">Inspiration & Resources</a>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <h2 class="page-title">Inspiration & Resources</h2>
+        <p class="intro-text">Discover influential academics, valuable resources, and essential tools to guide your journey to becoming a lecturer. Learn from those who have shaped modern academia and find resources to support your professional development.</p>
+        
+        <div class="table-container">
+            <h2 style="color: var(--primary); margin-bottom: 20px;">Influential Academics in Higher Education</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">Image</th>
+                        <th style="width: 20%;">Name & Title</th>
+                        <th style="width: 20%;">Institution</th>
+                        <th style="width: 25%;">Contributions</th>
+                        <th style="width: 20%;">Resources & Links</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. Sarah Johnson" class="figure-image"></td>
+                        <td>Dr. Sarah Johnson<br><span style="color: #7f8c8d; font-size: 0.9rem;">Education Specialist</span></td>
+                        <td>Harvard Graduate School of Education</td>
+                        <td>
+                            Pioneered innovative teaching methods for higher education. Developed the "Active Learning Framework" used in universities worldwide.
+                            <p class="quote">"Education is not the filling of a pail, but the lighting of a fire."</p>
+                        </td>
+                        <td>
+                            <a href="https://www.harvard.edu" class="resource-link" target="_blank">Harvard Profile</a><br>
+                            <a href="https://www.ted.com/talks" class="resource-link" target="_blank">TED Talk on Education</a><br>
+                            <a href="https://scholar.harvard.edu" class="resource-link" target="_blank">Research Publications</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Prof. Michael Chen" class="figure-image"></td>
+                        <td>Prof. Michael Chen<br><span style="color: #7f8c8d; font-size: 0.9rem;">Research Methodology</span></td>
+                        <td>Stanford University</td>
+                        <td>
+                            Revolutionized academic research practices. Author of "The Modern Researcher" textbook used in graduate programs globally.
+                            <p class="quote">"Good research creates more questions than answers."</p>
+                        </td>
+                        <td>
+                            <a href="https://www.stanford.edu" class="resource-link" target="_blank">Stanford Faculty Page</a><br>
+                            <a href="https://www.researchgate.net" class="resource-link" target="_blank">ResearchGate Profile</a><br>
+                            <a href="https://www.youtube.com" class="resource-link" target="_blank">Lecture Series</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. Amina Patel" class="figure-image"></td>
+                        <td>Dr. Amina Patel<br><span style="color: #7f8c8d; font-size: 0.9rem;">Digital Pedagogy</span></td>
+                        <td>MIT Open Learning</td>
+                        <td>
+                            Leader in digital education transformation. Developed frameworks for effective online teaching adopted by top universities.
+                            <p class="quote">"Technology in education should enhance, not replace, human connection."</p>
+                        </td>
+                        <td>
+                            <a href="https://web.mit.edu" class="resource-link" target="_blank">MIT Faculty Profile</a><br>
+                            <a href="https://www.coursera.org" class="resource-link" target="_blank">Online Course</a><br>
+                            <a href="https://www.edtechmagazine.com" class="resource-link" target="_blank">EdTech Articles</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Prof. James Wilson" class="figure-image"></td>
+                        <td>Prof. James Wilson<br><span style="color: #7f8c8d; font-size: 0.9rem;">Academic Leadership</span></td>
+                        <td>University of Oxford</td>
+                        <td>
+                            Renowned for developing academic leadership programs. Author of "The Scholar's Journey" guiding early career academics.
+                            <p class="quote">"Leadership in academia means empowering others to discover their potential."</p>
+                        </td>
+                        <td>
+                            <a href="https://www.ox.ac.uk" class="resource-link" target="_blank">Oxford Profile</a><br>
+                            <a href="https://www.timeshighereducation.com" class="resource-link" target="_blank">THE Articles</a><br>
+                            <a href="https://www.academia.edu" class="resource-link" target="_blank">Academic Papers</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr.Elena Rodriguez" class="figure-image"></td>
+                        <td>Dr. Elena Rodriguez<br><span style="color: #7f8c8d; font-size: 0.9rem;">Inclusive Education</span></td>
+                        <td>University of Cape Town</td>
+                        <td>
+                            Advocate for inclusive education policies. Developed frameworks for accessible learning environments in diverse contexts.
+                            <p class="quote">"True education embraces all voices and creates space for diverse perspectives."</p>
+                        </td>
+                        <td>
+                            <a href="https://www.uct.ac.za" class="resource-link" target="_blank">UCT Faculty Page</a><br>
+                            <a href="https://www.unesco.org" class="resource-link" target="_blank">UNESCO Reports</a><br>
+                            <a href="https://www.inclusiveeducation.net" class="resource-link" target="_blank">Inclusive Education Blog</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="resources-section">
+            <div class="resource-card">
+                <h3><i>📚</i> Academic Journals</h3>
+                <ul>
+                    <li><a href="https://www.tandfonline.com" class="resource-link" target="_blank">Higher Education Research & Development</a></li>
+                    <li><a href="https://www.jstor.org" class="resource-link" target="_blank">Journal of Educational Psychology</a></li>
+                    <li><a href="https://www.sciencedirect.com" class="resource-link" target="_blank">Teaching in Higher Education</a></li>
+                    <li><a href="https://journals.sagepub.com" class="resource-link" target="_blank">Innovations in Education and Teaching International</a></li>
+                    <li><a href="https://www.emerald.com" class="resource-link" target="_blank">International Journal for Academic Development</a></li>
+                </ul>
+            </div>
+            
+            <div class="resource-card">
+                <h3><i>💼</i> Professional Organizations</h3>
+                <ul>
+                    <li><a href="https://www.aaup.org" class="resource-link" target="_blank">American Association of University Professors</a></li>
+                    <li><a href="https://www.advance-he.ac.uk" class="resource-link" target="_blank">Advance HE (UK)</a></li>
+                    <li><a href="https://www.stlhe.ca" class="resource-link" target="_blank">Society for Teaching and Learning in Higher Education</a></li>
+                    <li><a href="https://www.aera.net" class="resource-link" target="_blank">American Educational Research Association</a></li>
+                    <li><a href="https://www.icde.org" class="resource-link" target="_blank">International Council for Open and Distance Education</a></li>
+                </ul>
+            </div>
+            
+            <div class="resource-card">
+                <h3><i>🛠️</i> Teaching Resources</h3>
+                <ul>
+                    <li><a href="https://www.coursera.org" class="resource-link" target="_blank">Coursera - Teaching Courses</a></li>
+                    <li><a href="https://www.edx.org" class="resource-link" target="_blank">edX - Higher Education Certificates</a></li>
+                    <li><a href="https://teachremotely.harvard.edu" class="resource-link" target="_blank">Harvard Remote Teaching Resources</a></li>
+                    <li><a href="https://ctl.columbia.edu" class="resource-link" target="_blank">Columbia Center for Teaching and Learning</a></li>
+                    <li><a href="https://www.timeshighereducation.com" class="resource-link" target="_blank">Times Higher Education Career Advice</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="book-section">
+            <div class="container">
+                <h2 class="page-title">Essential Reading for Aspiring Academics</h2>
+                <p class="intro-text">These influential books provide valuable insights into teaching, research, and academic life.</p>
+                
+                <div class="books-container">
+                    <div class="book-card">
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="The Craft of Research" class="book-image">
+                        <div class="book-info">
+                            <div class="book-title">The Craft of Research</div>
+                            <div class="book-author">Wayne C. Booth, Gregory G. Colomb, Joseph M. Williams</div>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="book-card">
+                        <img src="https://images.unsplash.com/photo-1495640388908-05fa85288e61?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Teaching What You Don't Know" class="book-image">
+                        <div class="book-info">
+                            <div class="book-title">Teaching What You Don't Know</div>
+                            <div class="book-author">Therese Huston</div>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="book-card">
+                        <img src="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="How Learning Works" class="book-image">
+                        <div class="book-info">
+                            <div class="book-title">How Learning Works</div>
+                            <div class="book-author">Susan A. Ambrose, et al.</div>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="book-card">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="The Professor Is In" class="book-image">
+                        <div class="book-info">
+                            <div class="book-title">The Professor Is In</div>
+                            <div class="book-author">Karen Kelsky</div>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="center">
+            <a href="steps.html" class="btn">View the Step-by-Step Guide</a>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>SMM30503 – Web Design & Development | Individual Assignment 1</p>
+            <p>Learn more about academic careers at <a href="https://www.timeshighereducation.com/career" style="color: #3498db; text-decoration: none;" target="_blank">Times Higher Education</a></p>
+        </div>
+    </footer>
+</body>
+</html>
